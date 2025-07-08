@@ -1,0 +1,277 @@
+{
+  "empresa_analisada": {
+    "nome": "EcoClean Produtos de Limpeza",
+    "setor": "Produtos de limpeza sustentáveis",
+    "segmento": "Limpeza doméstica e comercial",
+    "posicionamento": "Premium sustentável",
+    "mercado_alvo": "Consumidores conscientes, empresas ESG",
+    "fundacao": "2018",
+    "sede": "Curitiba, PR",
+    "funcionarios": 85,
+    "faturamento_anual": "R$ 12 milhões",
+    "market_share_atual": "2.5%",
+    "presenca_geografica": ["PR", "SC", "RS", "SP"],
+    "certificacoes": ["ECOCERT", "FSC", "Cradle to Cradle", "ABNT NBR ISO 14001"],
+    "canais_venda": {
+      "e_commerce_proprio": "35%",
+      "marketplaces": "25%",
+      "supermercados": "20%",
+      "lojas_especializadas": "15%",
+      "b2b_direto": "5%"
+    },
+    "investidores": ["Fundo Verde Capital", "Impact Ventures"],
+    "premios": ["Prêmio Sustentabilidade 2023", "Top Inovação Verde 2022"]
+  },
+  "mercado_overview": {
+    "tamanho_mercado": {
+      "brasil_total": "R$ 15 bilhões",
+      "segmento_sustentavel": "R$ 2.1 bilhões (14% do total)",
+      "regiao_sul_sudeste": "R$ 9 bilhões (60% do mercado)"
+    },
+    "crescimento_anual": {
+      "mercado_total": "8.5%",
+      "segmento_sustentavel": "22.3%",
+      "e_commerce": "35.7%"
+    },
+    "tendencias": [
+      "Crescimento da consciência ambiental (+15% consumidores/ano)",
+      "Demanda por produtos biodegradáveis (+28% em 2023)",
+      "Certificações sustentáveis obrigatórias em licitações",
+      "E-commerce em expansão (45% das vendas até 2025)",
+      "Economia circular e refil de produtos",
+      "Influência de ESG nas decisões de compra B2B",
+      "Regulamentação mais rígida para químicos"
+    ],
+    "sazonalidade": {
+      "picos_vendas": "Dezembro (+35%) e Março (+25%)",
+      "baixa_temporada": "Junho-Julho (-15%)",
+      "eventos_especiais": "Black Friday (+50%), Dia das Mães (+20%)"
+    },
+    "segmentacao_consumidor": {
+      "classe_a_b": "65% do faturamento",
+      "millennials_gen_z": "78% dos compradores sustentáveis",
+      "empresas_esg": "Crescimento 40% ao ano"
+    },
+    "barreiras_entrada": [
+      "Certificações ambientais (custo R$ 200-500 mil)",
+      "Investimento em P&D sustentável",
+      "Rede de distribuição estabelecida",
+      "Capital para marketing educativo"
+    ],
+    "drivers_crescimento": [
+      "Lei de Resíduos Sólidos",
+      "Pressão de investidores ESG",
+      "Conscientização pós-pandemia",
+      "Incentivos fiscais para produtos verdes"
+    ]
+  },
+  "concorrentes_principais": [
+    {
+      "nome": "CleanTech Solutions",
+      "market_share": "15%",
+      "posicionamento": "Tecnologia avançada",
+      "pontos_fortes": [
+        "Investimento alto em P&D",
+        "Produtos inovadores",
+        "Parcerias com grandes redes"
+      ],
+      "pontos_fracos": [
+        "Preços elevados",
+        "Pouca presença online",
+        "Foco limitado em sustentabilidade"
+      ],
+      "estrategia_precos": "Premium (20-30% acima da média)",
+      "canais_distribuicao": ["Grandes redes", "B2B", "Distribuidores"]
+    },
+    {
+      "nome": "GreenHome Produtos",
+      "market_share": "12%",
+      "posicionamento": "Sustentabilidade acessível",
+      "pontos_fortes": [
+        "Certificações ambientais",
+        "Preços competitivos",
+        "Marketing digital forte"
+      ],
+      "pontos_fracos": [
+        "Qualidade inconsistente",
+        "Distribuição limitada",
+        "Dependência de fornecedores"
+      ],
+      "estrategia_precos": "Competitivo (alinhado com mercado)",
+      "canais_distribuicao": ["E-commerce", "Lojas especializadas", "Supermercados"]
+    },
+    {
+      "nome": "BioLimpa Indústria",
+      "market_share": "8%",
+      "posicionamento": "Tradição e confiança",
+      "pontos_fortes": [
+        "Marca estabelecida (30 anos)",
+        "Rede de distribuição ampla",
+        "Relacionamento B2B sólido"
+      ],
+      "pontos_fracos": [
+        "Inovação lenta",
+        "Imagem conservadora",
+        "Pouco foco em sustentabilidade"
+      ],
+      "estrategia_precos": "Econômico (10-15% abaixo da média)",
+      "canais_distribuicao": ["Atacadistas", "Pequenos varejos", "B2B tradicional"]
+    }
+  ],
+  "analise_produtos": {
+    "categorias_principais": [
+      "Detergentes multiuso",
+      "Desinfetantes",
+      "Produtos para vidros",
+      "Limpadores de piso",
+      "Produtos para banheiro"
+    ],
+    "diferenciais_competitivos": {
+      "nossa_empresa": [
+        "100% biodegradável",
+        "Embalagens recicláveis",
+        "Fórmulas concentradas",
+        "Certificação ECOCERT"
+      ],
+      "concorrentes": {
+        "CleanTech": ["Tecnologia antimicrobiana", "Eficácia superior"],
+        "GreenHome": ["Preço acessível", "Variedade de produtos"],
+        "BioLimpa": ["Tradição", "Disponibilidade ampla"]
+      }
+    }
+  },
+  "estrategias_marketing": {
+    "nossa_empresa": {
+      "canais": ["Instagram", "Site próprio", "Influenciadores"],
+      "investimento_anual": "R$ 500 mil",
+      "foco": "Educação ambiental e sustentabilidade"
+    },
+    "concorrentes": {
+      "CleanTech": {
+        "canais": ["TV", "Revistas especializadas", "Feiras"],
+        "investimento_estimado": "R$ 2 milhões",
+        "foco": "Eficácia e tecnologia"
+      },
+      "GreenHome": {
+        "canais": ["Facebook", "Google Ads", "YouTube"],
+        "investimento_estimado": "R$ 800 mil",
+        "foco": "Custo-benefício sustentável"
+      },
+      "BioLimpa": {
+        "canais": ["Rádio", "Material POS", "Relacionamento"],
+        "investimento_estimado": "R$ 300 mil",
+        "foco": "Tradição e confiabilidade"
+      }
+    }
+  },
+  "analise_precos": {
+    "detergente_multiuso_500ml": {
+      "nossa_empresa": "R$ 8,90",
+      "CleanTech": "R$ 12,50",
+      "GreenHome": "R$ 7,80",
+      "BioLimpa": "R$ 6,50",
+      "media_mercado": "R$ 8,93"
+    },
+    "desinfetante_1L": {
+      "nossa_empresa": "R$ 15,90",
+      "CleanTech": "R$ 22,00",
+      "GreenHome": "R$ 14,50",
+      "BioLimpa": "R$ 11,90",
+      "media_mercado": "R$ 16,08"
+    }
+  },
+  "oportunidades_identificadas": [
+    "Segmento B2B sustentável em crescimento",
+    "Expansão para produtos de limpeza automotiva",
+    "Parcerias com empresas de delivery",
+    "Desenvolvimento de linha profissional",
+    "Exportação para países vizinhos"
+  ],
+  "ameacas_competitivas": [
+    {
+      "ameaca": "Entrada de multinacionais no segmento sustentável",
+      "probabilidade": "Alta",
+      "impacto": "Alto",
+      "prazo": "12-18 meses",
+      "mitigacao": "Fortalecer marca e fidelização"
+    },
+    {
+      "ameaca": "Guerra de preços",
+      "probabilidade": "Média",
+      "impacto": "Alto",
+      "prazo": "6-12 meses",
+      "mitigacao": "Diferenciação por valor agregado"
+    },
+    {
+      "ameaca": "Mudanças na regulamentação ambiental",
+      "probabilidade": "Baixa",
+      "impacto": "Médio",
+      "prazo": "24+ meses",
+      "mitigacao": "Acompanhamento regulatório ativo"
+    },
+    {
+      "ameaca": "Concentração do varejo",
+      "probabilidade": "Alta",
+      "impacto": "Médio",
+      "prazo": "Contínuo",
+      "mitigacao": "Diversificação de canais"
+    },
+    {
+      "ameaca": "Imitação de produtos por concorrentes",
+      "probabilidade": "Alta",
+      "impacto": "Médio",
+      "prazo": "6-9 meses",
+      "mitigacao": "Inovação contínua e patentes"
+    }
+  ],
+  "analise_swot_competitiva": {
+    "nossa_empresa_vs_mercado": {
+      "forcas_unicas": [
+        "Pioneirismo em fórmulas concentradas",
+        "Certificação ECOCERT exclusiva na região",
+        "Relacionamento direto com fornecedores sustentáveis",
+        "Equipe especializada em química verde"
+      ],
+      "vantagens_competitivas": [
+        "Custo 15% menor que CleanTech",
+        "Qualidade superior ao GreenHome",
+        "Inovação mais rápida que BioLimpa",
+        "Presença digital mais forte"
+      ]
+    }
+  },
+  "projecoes_mercado": {
+    "cenario_2024_2026": {
+      "crescimento_esperado": "25% ao ano (segmento sustentável)",
+      "novos_entrantes": "3-5 players significativos",
+      "consolidacao": "Possível fusão entre 2º e 3º colocados",
+      "regulamentacao": "Nova lei de rotulagem ambiental"
+    },
+    "nossa_posicao_futura": {
+      "market_share_meta_2026": "8-10%",
+      "faturamento_projetado": "R$ 35-45 milhões",
+      "expansao_geografica": "Presença em 8 estados",
+      "novos_produtos": "Linha automotiva e industrial"
+    }
+  },
+  "recomendacoes_estrategicas": {
+    "curto_prazo_6_meses": [
+      "Intensificar marketing digital",
+      "Expandir linha de produtos para banheiro",
+      "Firmar parceria com marketplace líder",
+      "Implementar programa de fidelidade B2B"
+    ],
+    "medio_prazo_12_meses": [
+      "Lançar linha automotiva",
+      "Abrir centro de distribuição em SP",
+      "Desenvolver app para pedidos B2B",
+      "Obter certificação Cradle to Cradle"
+    ],
+    "longo_prazo_24_meses": [
+      "Expandir para mercados internacionais",
+      "Desenvolver produtos de limpeza industrial",
+      "Considerar aquisições estratégicas",
+      "Implementar economia circular completa"
+    ]
+  }
+}

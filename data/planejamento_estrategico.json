@@ -1,0 +1,68 @@
+{
+    "empresa": {
+        "nome": "InovaTech Soluções Digitais",
+        "setor": "Tecnologia da Informação",
+        "porte": "Média empresa",
+        "funcionarios": 150,
+        "faturamento_anual_milhoes_brl": 25,
+        "fundacao": "2015",
+        "localizacao": "São Paulo, SP"
+    },
+    "situacao_atual": {
+        "produtos_servicos": [
+            "Desenvolvimento de software customizado",
+            "Consultoria em transformação digital",
+            "Suporte técnico especializado",
+            "Treinamentos corporativos em TI"
+        ],
+        "principais_clientes": [
+            "Empresas de médio porte do setor financeiro",
+            "Indústrias manufatureiras",
+            "Startups em crescimento"
+        ],
+        "receita_por_segmento": {
+            "desenvolvimento_software": "60%",
+            "consultoria": "25%",
+            "suporte_tecnico": "10%",
+            "treinamentos": "5%"
+        }
+    },
+    "analise_swot": {
+        "forcas": [
+            "Equipe técnica altamente qualificada e certificada",
+            "Portfólio diversificado de soluções",
+            "Alta satisfação do cliente (NPS 85)",
+            "Cultura de inovação e agilidade"
+        ],
+        "fraquezas": [
+            "Dependência de poucos clientes grandes",
+            "Processos internos ainda em otimização",
+            "Marketing e vendas com pouca automação",
+            "Marca pouco conhecida fora do nicho"
+        ],
+        "oportunidades": [
+            "Crescimento do mercado de IA e automação",
+            "Demanda por soluções em nuvem e cibersegurança",
+            "Expansão para mercados regionais inexplorados",
+            "Parcerias estratégicas com startups complementares"
+        ],
+        "ameacas": [
+            "Concorrência acirrada de grandes players",
+            "Escassez de talentos em tecnologia",
+            "Instabilidade econômica e política",
+            "Rápida obsolescência tecnológica"
+        ]
+    },
+    "objetivos_atuais": [
+        "Aumentar faturamento em 40% nos próximos 3 anos",
+        "Expandir operações para 2 novos estados",
+        "Diversificar base de clientes em 30%",
+        "Implementar processos de qualidade ISO 9001",
+        "Desenvolver 2 novos produtos SaaS proprietários"
+    ],
+    "metas_financeiras": {
+        "receita_2025_milhoes_brl": 35,
+        "lucratividade_alvo_percentual": 15,
+        "investimento_em_p_d_percentual_receita": 10
+    }
+}

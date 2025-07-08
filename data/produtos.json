@@ -1,0 +1,36 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "nome": "Smartphone Galaxy S23",
+            "categoria": "Eletrônicos",
+            "preco": 1299.99,
+            "estoque": 45,
+            "descricao": "Smartphone de última geração com tela AMOLED e câmera de 108MP."
+        },
+        {
+            "id": 2,
+            "nome": "Notebook Dell XPS 15",
+            "categoria": "Informática",
+            "preco": 2499.90,
+            "estoque": 12,
+            "descricao": "Notebook premium com processador Intel i7, 16GB RAM e tela 4K."
+        },
+        {
+            "id": 3,
+            "nome": "Fone Bluetooth Sony WH-1000XM5",
+            "categoria": "Acessórios",
+            "preco": 199.99,
+            "estoque": 78,
+            "descricao": "Fone de ouvido sem fio com cancelamento de ruído líder de mercado."
+        },
+        {
+            "id": 4,
+            "nome": "Smart TV LG OLED C2",
+            "categoria": "Eletrônicos",
+            "preco": 1800.00,
+            "estoque": 20,
+            "descricao": "Televisão OLED com cores vibrantes e alta definição."
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "vendas": [
+        {
+            "id": 1,
+            "data": "2024-01-15",
+            "cliente": "João Pedro",
+            "produto": "Smartphone Galaxy S23",
+            "quantidade": 2,
+            "valor_unitario": 1299.99,
+            "valor_total": 2599.98,
+            "vendedor": "Ana Silva",
+            "status": "Concluída"
+        },
+        {
+            "id": 2,
+            "data": "2024-01-16",
+            "cliente": "Empresa XYZ",
+            "produto": "Notebook Dell XPS 15",
+            "quantidade": 5,
+            "valor_unitario": 2499.90,
+            "valor_total": 12499.50,
+            "vendedor": "Carlos Santos",
+            "status": "Pendente"
+        },
+        {
+            "id": 3,
+            "data": "2024-01-17",
+            "cliente": "Maria Clara",
+            "produto": "Fone Bluetooth Sony WH-1000XM5",
+            "quantidade": 1,
+            "valor_unitario": 199.99,
+            "valor_total": 199.99,
+            "vendedor": "Ana Silva",
+            "status": "Concluída"
+        },
+        {
+            "id": 4,
+            "data": "2024-01-18",
+            "cliente": "Loja ABC",
+            "produto": "Smart TV LG OLED C2",
+            "quantidade": 3,
+            "valor_unitario": 1800.00,
+            "valor_total": 5400.00,
+            "vendedor": "Pedro Costa",
+            "status": "Em processamento"
+        }
+    ]
+}
