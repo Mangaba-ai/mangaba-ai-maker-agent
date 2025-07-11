@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App - Mangaba Agent Maker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
+                    <img src="{{ url_for('static', filename='images/mangaba-logo.svg') }}" alt="Mangaba Logo" width="32" height="32" class="me-2">
+                    <span>MANGABA.AI</span>
+                </a>
+                <div class="d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-theme-toggle me-2" title="Alternar tema"><i class="bi"></i></button>
+                    <a href="/" class="btn btn-secondary-custom d-none d-md-block">Voltar para Home</a>
+                   <a href="/business_model" class="btn btn-secondary-custom ms-2 d-none d-md-block">Modelo de Negócio</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <div class="container content-wrapper">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div id="progress-wizard" class="progress mb-5" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <div id="wizard-steps">
+                        <!-- Passo 1: Objetivo -->
+                        <div id="step-1" class="wizard-card animated">
+                            <div class="card-body">
+                                <h2 class="card-title mb-4"><i class="bi bi-bullseye me-2 accent-color"></i>Qual é o seu objetivo principal?</h2>
+                                <p class="card-subtitle mb-3">Descreva claramente o que você deseja alcançar. A IA usará isso para guiar todo o processo.</p>
+                                <textarea class="form-control" id="goalInput" rows="4" placeholder="Ex: Criar um plano de marketing digital para o lançamento de um novo aplicativo de produtividade..."></textarea>
+                                <div id="goal-validation" class="validation-message d-none">Por favor, defina um objetivo.</div>
+                                <button class="btn btn-secondary-custom w-100 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#examplesCollapse" aria-expanded="false" aria-controls="examplesCollapse">
+                                    <i class="bi bi-lightbulb me-2"></i> Ver Exemplos de Objetivos
+                                </button>
+                                <div class="collapse" id="examplesCollapse">
+                                    <div class="examples-container">
+                                        <div class="examples-title">
+                                            Exemplos de Objetivos
+                                        </div>
+                                        
+                                        <div class="example-category">
+                                            <div class="category-title">📊 Análise de Negócios</div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Analisar o desempenho de vendas do último trimestre e identificar oportunidades de melhoria</div>
+                                                <span class="example-tag">Vendas</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Criar um relatório de análise de mercado para lançamento de novo produto</div>
+                                                <span class="example-tag">Produto</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Desenvolver estratégia de marketing digital para aumentar conversões em 30%</div>
+                                                <span class="example-tag">Marketing</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="example-category">
+                                            <div class="category-title">🎓 Acadêmico e Pesquisa</div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Escrever um artigo científico sobre inteligência artificial aplicada à educação</div>
+                                                <span class="example-tag">Acadêmico</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Criar uma revisão bibliográfica sobre sustentabilidade empresarial</div>
+                                                <span class="example-tag">Pesquisa</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Desenvolver um projeto de TCC sobre transformação digital</div>
+                                                <span class="example-tag">TCC</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="example-category">
+                                            <div class="category-title">🚀 Planejamento Estratégico</div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Elaborar plano estratégico de 5 anos para expansão da empresa</div>
+                                                <span class="example-tag">Estratégia</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Criar roadmap de implementação de tecnologias emergentes</div>
+                                                <span class="example-tag">Tecnologia</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Desenvolver plano de gestão de riscos para projeto crítico</div>
+                                                <span class="example-tag">Gestão</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="example-category">
+                                            <div class="category-title">💡 Criativo e Inovação</div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Criar campanha publicitária inovadora para produto sustentável</div>
+                                                <span class="example-tag">Criativo</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Desenvolver conceito de aplicativo mobile para delivery de comida saudável</div>
+                                                <span class="example-tag">UX/UI</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Escrever roteiro para vídeo institucional sobre cultura empresarial</div>
+                                                <span class="example-tag">Conteúdo</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="example-category">
+                                            <div class="category-title">📈 Análise de Dados</div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Analisar dados de comportamento do usuário para otimizar experiência no site</div>
+                                                <span class="example-tag">UX</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Criar dashboard executivo com KPIs de performance da empresa</div>
+                                                <span class="example-tag">BI</span>
+                                            </div>
+                                            <div class="example-item" onclick="selectExample(this)">
+                                                <div class="example-text">Desenvolver modelo preditivo para forecast de vendas</div>
+                                                <span class="example-tag">Machine Learning</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="click-hint">
+                                            💡 Clique em qualquer exemplo para usá-lo como base para seu objetivo
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mt-4">
+                                    <button id="btn-step-1" class="btn btn-primary-custom">Avançar <i class="bi bi-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Passo 2: Contexto -->
+                        <div id="step-2" class="wizard-card animated d-none">
+                            <div class="card-body">
+                                <h2 class="card-title mb-4"><i class="bi bi-paperclip me-2 accent-color"></i>Forneça o Contexto (Opcional)</h2>
+                                <p class="card-subtitle mb-3">Selecione o tipo de dado que deseja fornecer. Você pode enviar um arquivo, colar um JSON ou usar um de nossos exemplos.</p>
+                                
+                                <div class="btn-group w-100 mb-3" role="group">
+                                    <input type="radio" class="btn-check" name="dataSourceType" id="fileSource" value="file" checked>
+                                    <label class="btn btn-outline-secondary" for="fileSource"><i class="bi bi-file-earmark-arrow-up"></i> Arquivo</label>
+                                    <input type="radio" class="btn-check" name="dataSourceType" id="jsonSource" value="json">
+                                    <label class="btn btn-outline-secondary" for="jsonSource"><i class="bi bi-braces"></i> Inserir JSON</label>
+                                    <input type="radio" class="btn-check" name="dataSourceType" id="exampleSource" value="example">
+                                    <label class="btn btn-outline-secondary" for="exampleSource"><i class="bi bi-clipboard-data"></i> Usar Exemplo</label>
+                                </div>
+
+                                <div id="file-input-section" class="input-section">
+                                    <input type="file" id="dataSource" class="d-none" accept=".txt,.json">
+                                    <label for="dataSource" class="btn btn-secondary-custom w-100 file-input-label">
+                                        <i class="bi bi-upload"></i> <span id="file-label">Clique para selecionar um arquivo (.txt ou .json)</span>
+                                    </label>
+                                </div>
+                                <div id="json-input-section" class="input-section d-none">
+                                    <textarea class="form-control" id="jsonInput" rows="8" placeholder="Cole seu JSON aqui..."></textarea>
+                                </div>
+                                <div id="example-input-section" class="input-section d-none">
+                                    <select class="form-select" id="exampleSelect">
+                                        <option value="">Selecione um exemplo...</option>
+                                        <option value="produtos">Lista de Produtos</option>
+                                        <option value="usuarios">Dados de Usuários</option>
+                                        <option value="vendas">Relatório de Vendas</option>
+                                        <option value="tarefas">Lista de Tarefas</option>
+                                        <option value="planejamento_estrategico">Planejamento Estratégico</option>
+                                        <option value="analise_concorrencia">Análise de Concorrência</option>
+                                        <option value="okrs_planejamento">OKRs - Planejamento Estratégico</option>
+                                        <option value="burger_king_brasil">Burger King Brasil</option>
+                                    </select>
+                                    <div id="example-preview" class="mt-2 p-3 rounded d-none">
+                                        <pre id="example-content" class="mt-1 mb-0"></pre>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button id="btn-back-2" class="btn btn-secondary-custom"><i class="bi bi-arrow-left"></i> Voltar</button>
+                                    <button id="btn-step-2" class="btn btn-primary-custom">
+                                        <span class="btn-text">Iniciar Sistema</span>
+                                        <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+                                        <i class="bi bi-stars ms-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Passo 3: Resultado -->
+                        <div id="step-3" class="wizard-card animated d-none">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <h3 class="mb-3"><i class="bi bi-terminal me-2 accent-color"></i>Console de Execução</h3>
+                                        <div class="terminal-window">
+                                            <div id="live-log" class="terminal-body"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h3 class="mb-0"><i class="bi bi-file-earmark-text me-2 accent-color"></i>Resultado Final</h3>
+                                            <button id="btn-copy" class="btn btn-sm btn-secondary-custom" title="Copiar para área de transferência">
+                                                <i class="bi bi-clipboard"></i> <span class="btn-text">Copiar</span>
+                                            </button>
+                                        </div>
+                                        <div id="result-content" class="result-window">
+                                            <div class="placeholder-glow">
+                                                <span class="placeholder col-7"></span>
+                                                <span class="placeholder col-4"></span>
+                                                <span class="placeholder col-4"></span>
+                                                <span class="placeholder col-6"></span>
+                                                <span class="placeholder col-8"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mt-4">
+                                    <button id="btn-reset" class="btn btn-primary-custom"><i class="bi bi-arrow-clockwise"></i> Criar Novo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 mt-5">
+        <p class="secondary-text-color">&copy; 2025 Mangaba.AI. Todos os direitos reservados.</p>
+    </footer>
+    
+    <button id="back-to-top" class="btn btn-primary-custom" title="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

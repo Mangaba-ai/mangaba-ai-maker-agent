@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Negócio - Mangaba.AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
+                    <img src="{{ url_for('static', filename='images/mangaba-logo.svg') }}" alt="Mangaba Logo" width="32" height="32" class="me-2">
+                    <span>MANGABA.AI</span>
+                </a>
+                <div class="d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-theme-toggle me-2" title="Alternar tema"><i class="bi"></i></button>
+                    <a href="/app" class="btn btn-primary-custom d-none d-md-inline-block">Ir para a Aplicação <i class="bi bi-arrow-right"></i></a>
+                    <a href="/" class="btn btn-secondary-custom ms-2 d-none d-md-inline-block">Voltar para Home</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <header class="hero-section text-center">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-9">
+                        <h1 class="display-3 fw-bold text-gradient">Nosso Modelo de Negócio</h1>
+                        <p class="lead my-4 secondary-text-color">Acreditamos em um modelo que combina acessibilidade com poder, permitindo que todos, de indivíduos a grandes empresas, aproveitem o poder da IA colaborativa.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="container my-5 py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-3">Proposta de Valor</h2>
+                    <p class="secondary-text-color mb-4">Nossa plataforma não é apenas uma ferramenta, é um ecossistema de agentes de IA que trabalham juntos para transformar seus objetivos em realidade. Oferecemos:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex"><i class="bi bi-check-circle-fill text-primary me-3 fs-4"></i><span><strong>Eficiência Acelerada:</strong> Automatize tarefas complexas, desde a análise de dados até a criação de conteúdo estratégico.</span></li>
+                        <li class="mb-3 d-flex"><i class="bi bi-check-circle-fill text-primary me-3 fs-4"></i><span><strong>Inteligência Colaborativa:</strong> Agentes especializados trabalham em conjunto, combinando habilidades para resultados superiores.</span></li>
+                        <li class="d-flex"><i class="bi bi-check-circle-fill text-primary me-3 fs-4"></i><span><strong>Qualidade Profissional:</strong> Receba documentos, análises e planos prontos para uso, com um alto padrão de qualidade.</span></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card shadow-custom p-5">
+                        <div class="feature-icon mb-3"><i class="bi bi-stars"></i></div>
+                        <h4 class="card-title fw-bold">Como Funciona?</h4>
+                        <p class="card-text secondary-text-color">O processo é simples e poderoso. Você define a meta, fornece o contexto, e nosso orquestrador de IA seleciona e coordena os agentes perfeitos para o trabalho, entregando uma solução coesa e completa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans" class="container my-5 py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Planos Flexíveis para Cada Necessidade</h2>
+                <p class="lead secondary-text-color">Comece de graça e evolua conforme sua demanda cresce.</p>
+            </div>
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card h-100 text-center p-4">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mt-3">Plano Gratuito</h5>
+                            <h3 class="display-4 fw-bold my-3">R$0 / US$0</h3>
+                            <p class="card-text secondary-text-color">Para experimentar o poder da IA colaborativa.</p>
+                            <ul class="list-unstyled my-4 text-start">
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>2 consultas por mês</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>Acesso aos agentes essenciais</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>Resultados rápidos</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <a href="/app" class="btn btn-secondary-custom w-100">Começar Grátis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card h-100 text-center p-4">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mt-3">Plano Estudante</h5>
+                            <h3 class="display-4 fw-bold my-3">US$5<small class="secondary-text-color fs-5">/mês</small></h3>
+                            <p class="card-text secondary-text-color">Ferramentas de IA para impulsionar seus estudos.</p>
+                            <ul class="list-unstyled my-4 text-start">
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>20 consultas por mês</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>Acesso a agentes de pesquisa</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>Ideal para trabalhos acadêmicos</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <a href="/app" class="btn btn-accent w-100">Assinar Plano Estudante</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card h-100 text-center p-4 border-gradient shadow-custom">
+                         <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mt-3">Plano Premium</h5>
+                            <h3 class="display-4 fw-bold my-3">US$25<small class="secondary-text-color fs-5">/mês</small></h3>
+                            <p class="card-text secondary-text-color">Para máxima produtividade e recursos avançados.</p>
+                            <ul class="list-unstyled my-4 text-start">
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i><strong>100</strong> consultas por mês</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>Acesso a <strong>todos</strong> os agentes</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>Processamento prioritário</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-success me-2"></i>Suporte dedicado</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <a href="/app" class="btn btn-primary-custom w-100">Assinar Premium</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5 py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Um Ecossistema de Agentes Especializados</h2>
+                <p class="lead secondary-text-color">Nossa força reside na diversidade e especialização de nossos agentes de IA.</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-search me-2 accent-color"></i>Pesquisador</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-pencil-square me-2 accent-color"></i>Escritor</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-bar-chart-line-fill me-2 accent-color"></i>Analista de Vendas</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-box-seam me-2 accent-color"></i>Product Manager</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-people-fill me-2 accent-color"></i>UX/Users Analyst</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-pie-chart-fill me-2 accent-color"></i>Dados/BI</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-megaphone-fill me-2 accent-color"></i>Marketing Digital</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-briefcase-fill me-2 accent-color"></i>Jurídico</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-person-badge me-2 accent-color"></i>RH</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-cash-coin me-2 accent-color"></i>Finanças</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-flask me-2 accent-color"></i>Científico</div></div>
+                <div class="col-md-4 col-lg-3"><div class="feature-card p-3 text-center"><i class="bi bi-clipboard-data-fill me-2 accent-color"></i>Benchmarking</div></div>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <div class="feature-card p-5 text-center shadow-custom">
+                <h2 class="fw-bold">Pronto para Começar?</h2>
+                <p class="lead secondary-text-color my-4">Leve seus projetos para o próximo nível com o poder da IA colaborativa.</p>
+                <a href="/app" class="btn btn-primary-custom btn-lg">Crie seu Primeiro Sistema de IA <i class="bi bi-stars"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-4 mt-5">
+        <p class="secondary-text-color">&copy; 2025 Mangaba.AI. Todos os direitos reservados.</p>
+    </footer>
+
+    <button id="back-to-top" class="btn btn-primary-custom" title="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

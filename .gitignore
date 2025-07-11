@@ -1,0 +1,33 @@
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos temporários do Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Cache e logs
+.pytest_cache/
+*.log
+*.tmp
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependências
+node_modules/
+
+# Build e distribuição
+build/
+dist/
+*.egg-info/

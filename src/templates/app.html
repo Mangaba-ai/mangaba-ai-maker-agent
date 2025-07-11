@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangaba.AI - Sistema Multi-Agente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --light-bg: #ecf0f1;
+            --dark-text: #2c3e50;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .main-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .content-section {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            border: none;
+            border-radius: 10px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Estilos para Exemplos de Objetivos */
+        .exemplos-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .exemplos-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .exemplos-header:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .exemplos-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .toggle-icon {
+            color: var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        .exemplos-content {
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        .exemplos-content.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .categoria {
+            margin-bottom: 1.5rem;
+        }
+
+        .categoria-titulo {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+        }
+
+        .exemplos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .exemplo-item {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exemplo-item:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+        }
+
+        .exemplo-item:active {
+            transform: translateY(0);
+        }
+
+        .exemplo-texto {
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .exemplo-categoria {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--secondary-color);
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0 8px 0 8px;
+        }
+
+        .dicas-rapidas {
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+            border-left: 4px solid var(--success-color);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1rem;
+        }
+
+        .dicas-titulo {
+            color: var(--success-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .dicas-lista {
+            font-size: 0.85rem;
+            color: #2d5a2d;
+            margin: 0;
+            padding-left: 1rem;
+        }
+
+        .resultado-container {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 1px solid #e9ecef;
+            display: none;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 1.5rem;
+                border-radius: 15px 15px 0 0;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .exemplos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="main-container">
+            <div class="header">
+                <h1><i class="fas fa-robot"></i> Mangaba.AI</h1>
+                <p>Sistema Multi-Agente Inteligente para Análise e Geração de Conteúdo</p>
+            </div>
+
+            <div class="content-section">
+                <!-- Seção de Exemplos de Objetivos -->
+                <div class="exemplos-container">
+                    <div class="exemplos-header" onclick="toggleExemplos()">
+                        <h3 class="exemplos-title">
+                            <i class="fas fa-lightbulb"></i> Exemplos de Objetivos
+                        </h3>
+                        <i class="fas fa-chevron-down toggle-icon" id="toggleIcon"></i>
+                    </div>
+                    
+                    <div class="exemplos-content" id="exemplosContent">
+                        <!-- Análise de Negócios -->
+                        <div class="categoria">
+                            <div class="categoria-titulo">
+                                <i class="fas fa-chart-line"></i> Análise de Negócios
+                            </div>
+                            <div class="exemplos-grid">
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Negócios</div>
+                                    <p class="exemplo-texto">Analisar o desempenho de vendas do último trimestre e identificar oportunidades de melhoria</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Negócios</div>
+                                    <p class="exemplo-texto">Criar um plano de marketing digital para aumentar a presença online da empresa</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Negócios</div>
+                                    <p class="exemplo-texto">Avaliar a viabilidade de expansão para novos mercados regionais</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Acadêmico e Pesquisa -->
+                        <div class="categoria">
+                            <div class="categoria-titulo">
+                                <i class="fas fa-graduation-cap"></i> Acadêmico e Pesquisa
+                            </div>
+                            <div class="exemplos-grid">
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Acadêmico</div>
+                                    <p class="exemplo-texto">Elaborar uma revisão bibliográfica sobre inteligência artificial na educação</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Acadêmico</div>
+                                    <p class="exemplo-texto">Desenvolver uma metodologia de pesquisa para estudar o comportamento do consumidor</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Acadêmico</div>
+                                    <p class="exemplo-texto">Criar um projeto de pesquisa sobre sustentabilidade em empresas de tecnologia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Planejamento Estratégico -->
+                        <div class="categoria">
+                            <div class="categoria-titulo">
+                                <i class="fas fa-chess"></i> Planejamento Estratégico
+                            </div>
+                            <div class="exemplos-grid">
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Estratégia</div>
+                                    <p class="exemplo-texto">Desenvolver um plano estratégico de 5 anos para crescimento da empresa</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Estratégia</div>
+                                    <p class="exemplo-texto">Analisar a concorrência e definir estratégias de diferenciação no mercado</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Estratégia</div>
+                                    <p class="exemplo-texto">Criar um roadmap de inovação tecnológica para os próximos 3 anos</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Criativo e Inovação -->
+                        <div class="categoria">
+                            <div class="categoria-titulo">
+                                <i class="fas fa-palette"></i> Criativo e Inovação
+                            </div>
+                            <div class="exemplos-grid">
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Criativo</div>
+                                    <p class="exemplo-texto">Desenvolver conceitos criativos para uma campanha publicitária inovadora</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Criativo</div>
+                                    <p class="exemplo-texto">Criar um brainstorming de ideias para novos produtos ou serviços</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Criativo</div>
+                                    <p class="exemplo-texto">Elaborar um plano de design thinking para resolver problemas complexos</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Análise de Dados -->
+                        <div class="categoria">
+                            <div class="categoria-titulo">
+                                <i class="fas fa-chart-bar"></i> Análise de Dados
+                            </div>
+                            <div class="exemplos-grid">
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Dados</div>
+                                    <p class="exemplo-texto">Analisar dados de comportamento de usuários para otimizar a experiência do cliente</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Dados</div>
+                                    <p class="exemplo-texto">Criar dashboards e relatórios de KPIs para monitoramento de performance</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Dados</div>
+                                    <p class="exemplo-texto">Desenvolver modelos preditivos para forecasting de vendas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Operacional -->
+                        <div class="categoria">
+                            <div class="categoria-titulo">
+                                <i class="fas fa-cogs"></i> Operacional
+                            </div>
+                            <div class="exemplos-grid">
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Operações</div>
+                                    <p class="exemplo-texto">Otimizar processos internos para aumentar a eficiência operacional</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Operações</div>
+                                    <p class="exemplo-texto">Implementar um sistema de gestão de qualidade ISO 9001</p>
+                                </div>
+                                <div class="exemplo-item" onclick="selecionarExemplo(this)">
+                                    <div class="exemplo-categoria">Operações</div>
+                                    <p class="exemplo-texto">Desenvolver um plano de contingência e gestão de riscos operacionais</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dicas-rapidas">
+                            <div class="dicas-titulo">
+                                <i class="fas fa-info-circle"></i> Dicas Rápidas
+                            </div>
+                            <ul class="dicas-lista">
+                                <li>Clique em qualquer exemplo para preenchê-lo automaticamente</li>
+                                <li>Seja específico sobre o que você quer analisar ou criar</li>
+                                <li>Inclua contexto relevante para melhores resultados</li>
+                                <li>Combine diferentes tipos de análise para insights mais ricos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário Principal -->
+                <form id="agentForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="goal" class="form-label">
+                            <i class="fas fa-target"></i> Objetivo Principal
+                        </label>
+                        <textarea 
+                            class="form-control" 
+                            id="goal" 
+                            name="goal" 
+                            rows="3" 
+                            placeholder="Descreva seu objetivo de forma clara e específica..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dataSource" class="form-label">
+                            <i class="fas fa-file-upload"></i> Arquivo de Dados (Opcional)
+                        </label>
+                        <input 
+                            type="file" 
+                            class="form-control" 
+                            id="dataSource" 
+                            name="dataSource" 
+                            accept=".txt,.json,.csv,.md"
+                        >
+                        <small class="form-text text-muted">
+                            Formatos suportados: TXT, JSON, CSV, MD
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="json_data" class="form-label">
+                            <i class="fas fa-code"></i> Dados JSON (Opcional)
+                        </label>
+                        <textarea 
+                            class="form-control" 
+                            id="json_data" 
+                            name="json_data" 
+                            rows="4" 
+                            placeholder='Exemplo: {"vendas": [100, 200, 150], "meses": ["Jan", "Fev", "Mar"]}'
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="text_context" class="form-label">
+                            <i class="fas fa-align-left"></i> Contexto Adicional (Opcional)
+                        </label>
+                        <textarea 
+                            class="form-control" 
+                            id="text_context" 
+                            name="text_context" 
+                            rows="3" 
+                            placeholder="Forneça informações adicionais, contexto ou requisitos específicos..."
+                        ></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-rocket"></i> Executar Sistema Multi-Agente
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Área de Resultados -->
+                <div id="resultado" class="resultado-container">
+                    <div id="loading" class="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Processando com sistema multi-agente...</p>
+                        <div id="logs"></div>
+                    </div>
+                    <div id="output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Função para alternar visibilidade dos exemplos
+        function toggleExemplos() {
+            const content = document.getElementById('exemplosContent');
+            const icon = document.getElementById('toggleIcon');
+            
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                icon.classList.remove('rotated');
+            } else {
+                content.classList.add('show');
+                icon.classList.add('rotated');
+            }
+        }
+
+        // Função para selecionar um exemplo
+        function selecionarExemplo(elemento) {
+            const texto = elemento.querySelector('.exemplo-texto').textContent;
+            const goalTextarea = document.getElementById('goal');
+            
+            // Adicionar efeito visual de seleção
+            document.querySelectorAll('.exemplo-item').forEach(item => {
+                item.style.background = 'white';
+                item.style.borderColor = '#dee2e6';
+            });
+            
+            elemento.style.background = 'linear-gradient(135deg, #e3f2fd, #f0f8ff)';
+            elemento.style.borderColor = '#2196f3';
+            
+            // Preencher o campo de objetivo
+            goalTextarea.value = texto;
+            goalTextarea.focus();
+            
+            // Scroll suave para o formulário
+            goalTextarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Feedback visual
+            setTimeout(() => {
+                elemento.style.background = 'white';
+                elemento.style.borderColor = '#dee2e6';
+            }, 2000);
+        }
+
+        // Manipulação do formulário
+        document.getElementById('agentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const resultadoDiv = document.getElementById('resultado');
+            const loadingDiv = document.getElementById('loading');
+            const outputDiv = document.getElementById('output');
+            const logsDiv = document.getElementById('logs');
+            
+            // Mostrar área de resultados e loading
+            resultadoDiv.style.display = 'block';
+            loadingDiv.style.display = 'block';
+            outputDiv.innerHTML = '';
+            logsDiv.innerHTML = '';
+            
+            // Scroll para a área de resultados
+            resultadoDiv.scrollIntoView({ behavior: 'smooth' });
+            
+            // Configurar EventSource para receber dados em tempo real
+            const eventSource = new EventSource('/api/run_agent_system?' + new URLSearchParams(formData).toString());
+            
+            eventSource.onmessage = function(event) {
+                try {
+                    const data = JSON.parse(event.data);
+                    if (typeof data === 'string') {
+                        logsDiv.innerHTML += '<div class="log-entry">' + data + '</div>';
+                    }
+                } catch (e) {
+                    logsDiv.innerHTML += '<div class="log-entry">' + event.data + '</div>';
+                }
+            };
+            
+            eventSource.addEventListener('log', function(event) {
+                const logData = JSON.parse(event.data);
+                logsDiv.innerHTML += '<div class="log-entry text-muted"><small>' + logData + '</small></div>';
+                logsDiv.scrollTop = logsDiv.scrollHeight;
+            });
+            
+            eventSource.addEventListener('final_result', function(event) {
+                const result = JSON.parse(event.data);
+                loadingDiv.style.display = 'none';
+                outputDiv.innerHTML = '<div class="alert alert-success"><h5><i class="fas fa-check-circle"></i> Resultado Final:</h5><div>' + result.replace(/\n/g, '<br>') + '</div></div>';
+            });
+            
+            eventSource.addEventListener('error', function(event) {
+                const errorData = JSON.parse(event.data);
+                loadingDiv.style.display = 'none';
+                outputDiv.innerHTML = '<div class="alert alert-danger"><h5><i class="fas fa-exclamation-triangle"></i> Erro:</h5><div>' + errorData.error + '</div></div>';
+                eventSource.close();
+            });
+            
+            eventSource.addEventListener('end', function(event) {
+                eventSource.close();
+            });
+            
+            eventSource.onerror = function(event) {
+                loadingDiv.style.display = 'none';
+                outputDiv.innerHTML = '<div class="alert alert-danger"><h5><i class="fas fa-exclamation-triangle"></i> Erro de Conexão</h5><div>Erro ao conectar com o servidor. Tente novamente.</div></div>';
+                eventSource.close();
+            };
+        });
+
+        // Inicializar com exemplos visíveis por padrão
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleExemplos();
+        });
+    </script>
+</body>
+</html>

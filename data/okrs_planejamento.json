@@ -1,0 +1,58 @@
+{
+    "empresa": "Global Solutions Inc.",
+    "periodo": "2024 - Planejamento Anual e OKRs Trimestrais",
+    "visao_geral": "Acelerar a inovação e a expansão de mercado, mantendo a excelência operacional.",
+    "okrs_anuais": [
+        {
+            "objetivo": "Acelerar o crescimento da receita e a participação de mercado",
+            "key_results": [
+                "Aumentar a receita anual de $50M para $75M (50% de crescimento).",
+                "Expandir a base de clientes ativos em 30% (de 1000 para 1300 clientes).",
+                "Lançar 2 novos produtos/serviços que gerem $5M em receita no primeiro ano."
+            ]
+        },
+        {
+            "objetivo": "Fortalecer a satisfação e retenção de clientes",
+            "key_results": [
+                "Aumentar o NPS (Net Promoter Score) de 60 para 75.",
+                "Reduzir o Churn Rate (taxa de cancelamento) de 10% para 5%.",
+                "Implementar um programa de fidelidade com 20% de adesão."
+            ]
+        },
+        {
+            "objetivo": "Otimizar a eficiência operacional e a cultura interna",
+            "key_results": [
+                "Reduzir os custos operacionais em 10% sem comprometer a qualidade.",
+                "Aumentar a produtividade da equipe em 15% (medido por projetos entregues/mês).",
+                "Alcançar 90% de satisfação dos funcionários na pesquisa interna."
+            ]
+        }
+    ],
+    "okrs_q1_2024": {
+        "foco_trimestral": "Lançamento de Produto e Otimização de Vendas",
+        "objetivos_prioritarios": [
+            {
+                "objetivo": "Garantir um lançamento de produto bem-sucedido",
+                "key_results": [
+                    "Lançar o 'Produto X' com 100% das funcionalidades planejadas.",
+                    "Gerar $1M em receita do 'Produto X' no primeiro trimestre.",
+                    "Alcançar 500 novos usuários ativos do 'Produto X'."
+                ]
+            },
+            {
+                "objetivo": "Melhorar a performance do time de vendas",
+                "key_results": [
+                    "Aumentar a taxa de conversão de leads em 5%.",
+                    "Reduzir o ciclo de vendas médio em 10 dias.",
+                    "Treinar 100% da equipe de vendas nas novas metodologias."
+                ]
+            }
+        ]
+    },
+    "criterios_sucesso": {
+        "okr_bem_sucedido": "70% ou mais dos Key Results atingidos",
+        "objetivo_parcial": "50-69% dos Key Results atingidos",
+        "objetivo_nao_atingido": "Menos de 50% dos Key Results atingidos"
+    },
+    "proximos_passos": "Revisão trimestral dos OKRs, ajuste de estratégias e comunicação transparente."
+}

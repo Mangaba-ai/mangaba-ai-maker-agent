@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de Objetivos - Mangaba.AI</title>
+    <style>
+        .examples-container {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+            border: 1px solid #e9ecef;
+        }
+        .examples-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+        .examples-title::before {
+            content: "💡";
+            margin-right: 8px;
+        }
+        .example-category {
+            margin-bottom: 20px;
+        }
+        .category-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .example-item {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        .example-item:hover {
+            border-color: #007bff;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+            transform: translateY(-1px);
+        }
+        .example-text {
+            font-size: 14px;
+            color: #495057;
+            line-height: 1.4;
+        }
+        .example-tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        .click-hint {
+            font-size: 12px;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 16px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="examples-container">
+        <div class="examples-title">
+            Exemplos de Objetivos
+        </div>
+        
+        <div class="example-category">
+            <div class="category-title">📊 Análise de Negócios</div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Analisar o desempenho de vendas do último trimestre e identificar oportunidades de melhoria</div>
+                <span class="example-tag">Vendas</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Criar um relatório de análise de mercado para lançamento de novo produto</div>
+                <span class="example-tag">Produto</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Desenvolver estratégia de marketing digital para aumentar conversões em 30%</div>
+                <span class="example-tag">Marketing</span>
+            </div>
+        </div>
+
+        <div class="example-category">
+            <div class="category-title">🎓 Acadêmico e Pesquisa</div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Escrever um artigo científico sobre inteligência artificial aplicada à educação</div>
+                <span class="example-tag">Acadêmico</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Criar uma revisão bibliográfica sobre sustentabilidade empresarial</div>
+                <span class="example-tag">Pesquisa</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Desenvolver um projeto de TCC sobre transformação digital</div>
+                <span class="example-tag">TCC</span>
+            </div>
+        </div>
+
+        <div class="example-category">
+            <div class="category-title">🚀 Planejamento Estratégico</div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Elaborar plano estratégico de 5 anos para expansão da empresa</div>
+                <span class="example-tag">Estratégia</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Criar roadmap de implementação de tecnologias emergentes</div>
+                <span class="example-tag">Tecnologia</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Desenvolver plano de gestão de riscos para projeto crítico</div>
+                <span class="example-tag">Gestão</span>
+            </div>
+        </div>
+
+        <div class="example-category">
+            <div class="category-title">💡 Criativo e Inovação</div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Criar campanha publicitária inovadora para produto sustentável</div>
+                <span class="example-tag">Criativo</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Desenvolver conceito de aplicativo mobile para delivery de comida saudável</div>
+                <span class="example-tag">UX/UI</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Escrever roteiro para vídeo institucional sobre cultura empresarial</div>
+                <span class="example-tag">Conteúdo</span>
+            </div>
+        </div>
+
+        <div class="example-category">
+            <div class="category-title">📈 Análise de Dados</div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Analisar dados de comportamento do usuário para otimizar experiência no site</div>
+                <span class="example-tag">UX</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Criar dashboard executivo com KPIs de performance da empresa</div>
+                <span class="example-tag">BI</span>
+            </div>
+            <div class="example-item" onclick="selectExample(this)">
+                <div class="example-text">Desenvolver modelo preditivo para forecast de vendas</div>
+                <span class="example-tag">Machine Learning</span>
+            </div>
+        </div>
+
+        <div class="click-hint">
+            💡 Clique em qualquer exemplo para usá-lo como base para seu objetivo
+        </div>
+    </div>
+
+    <script>
+        function selectExample(element) {
+            const exampleText = element.querySelector('.example-text').textContent;
+            
+            // Encontrar o campo de input de objetivo na página
+            const objectiveInput = document.querySelector('#objective') || 
+                                 document.querySelector('[name="objective"]') || 
+                                 document.querySelector('textarea') ||
+                                 document.querySelector('input[type="text"]');
+            
+            if (objectiveInput) {
+                objectiveInput.value = exampleText;
+                objectiveInput.focus();
+                
+                // Trigger change event para frameworks como React/Vue
+                const event = new Event('input', { bubbles: true });
+                objectiveInput.dispatchEvent(event);
+                
+                // Feedback visual
+                element.style.background = '#e8f5e8';
+                element.style.borderColor = '#28a745';
+                
+                setTimeout(() => {
+                    element.style.background = 'white';
+                    element.style.borderColor = '#dee2e6';
+                }, 1000);
+                
+                // Scroll para o campo de input
+                objectiveInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                // Fallback: copiar para clipboard
+                navigator.clipboard.writeText(exampleText).then(() => {
+                    alert('Exemplo copiado para a área de transferência!');
+                });
+            }
+        }
+        
+        // Adicionar animação de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const examples = document.querySelectorAll('.example-item');
+            examples.forEach((example, index) => {
+                example.style.opacity = '0';
+                example.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    example.style.transition = 'all 0.3s ease';
+                    example.style.opacity = '1';
+                    example.style.transform = 'translateY(0)';
+                }, index * 50);
+            });
+        });
+    </script>
+</body>
+</html>

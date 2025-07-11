@@ -1,0 +1,82 @@
+{
+    "empresa_analisada": {
+        "nome": "EcoClean Produtos de Limpeza Sustentáveis",
+        "setor": "Produtos de Limpeza",
+        "segmento": "Sustentáveis e Biodegradáveis",
+        "posicionamento": "Premium, Ecológico, Inovador",
+        "mercado_alvo": "Consumidores conscientes, empresas com foco ESG, hospitais e escolas"
+    },
+    "mercado_overview": {
+        "tamanho_mercado_bilhoes_brl": 15,
+        "crescimento_anual_percentual": 8.5,
+        "tendencias_atuais": [
+            "Aumento da demanda por produtos 'verdes'",
+            "Crescimento do e-commerce para produtos de limpeza",
+            "Regulamentações mais rígidas sobre componentes químicos",
+            "Personalização e produtos multifuncionais"
+        ],
+        "sazonalidade": "Picos em dezembro (festas) e março (limpeza pós-verão)"
+    },
+    "concorrentes_principais": [
+        {
+            "nome": "CleanFuture Solutions",
+            "market_share_percentual": 15,
+            "posicionamento": "Tecnologia e Eficiência",
+            "pontos_fortes": [
+                "Investimento massivo em P&D",
+                "Linha de produtos para uso industrial",
+                "Forte presença em grandes varejistas"
+            ],
+            "pontos_fracos": [
+                "Preços mais altos",
+                "Pouca comunicação sobre sustentabilidade",
+                "Canais de venda online limitados"
+            ],
+            "estrategias_marketing": "Foco em performance e resultados comprovados."
+        },
+        {
+            "nome": "GreenEssence Home",
+            "market_share_percentual": 12,
+            "posicionamento": "Acessível e Natural",
+            "pontos_fortes": [
+                "Ampla gama de certificações orgânicas",
+                "Preços competitivos",
+                "Comunidade online engajada"
+            ],
+            "pontos_fracos": [
+                "Distribuição limitada a lojas especializadas",
+                "Capacidade de produção menor",
+                "Marketing tradicional fraco"
+            ],
+            "estrategias_marketing": "Conteúdo educativo sobre benefícios naturais e sustentabilidade."
+        },
+        {
+            "nome": "BioShine Professional",
+            "market_share_percentual": 8,
+            "posicionamento": "Profissional e Concentrado",
+            "pontos_fortes": [
+                "Produtos de alta concentração para economia",
+                "Foco no mercado B2B (empresas de limpeza)",
+                "Reputação de eficácia"
+            ],
+            "pontos_fracos": [
+                "Pouca presença no varejo comum",
+                "Embalagens menos atrativas para o consumidor final",
+                "Marketing focado apenas em performance"
+            ],
+            "estrategias_marketing": "Vendas diretas e parcerias com distribuidores B2B."
+        }
+    ],
+    "oportunidades_identificadas": [
+        "Expansão para o segmento de limpeza automotiva sustentável.",
+        "Desenvolvimento de linha de produtos para bebês e pets.",
+        "Parcerias com influenciadores digitais focados em vida saudável.",
+        "Criação de um programa de refil para embalagens."
+    ],
+    "ameacas_identificadas": [
+        "Entrada de grandes multinacionais no segmento sustentável.",
+        "Flutuação nos preços de matérias-primas orgânicas.",
+        "Legislação ambiental mais complexa.",
+        "Surgimento de novas tecnologias de limpeza."
+    ]
+}
